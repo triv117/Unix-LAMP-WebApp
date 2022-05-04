@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300;400&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: grey;
+}
+
+.logInBox{
+    position: relative;
+    width: 23%;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:white ;
+}
+
+.avatarImg{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.emailPass{
+    position: relative;
+    display: block;
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+}
+.emailPass li{
+    list-style: none;
+}
+.password{
+    margin-top: 45px;
+}
+.emailPass input{
+    width: 100%;
+    border: none;
+    border-bottom:1px solid lightgray ;
+    padding-bottom: 10px;
+    transition: 0.3s;
+}
+.emailPass input:focus{
+    outline: none;
+    border-bottom-color: black ;
+    transition: 0.3s;
+}
+
+.btns{
+    display: flex;
+    margin: 35px 1em 0 1em;
+    justify-content: space-between;
+}
+.submit{
+    border: none;
+    width: 75px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: rgb(85, 118, 188);
+    color: white;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color: rgb(58, 96, 179);
+}
+.makeAccount{
+    font-size: 13px;
+    text-decoration: none;
+}
+.makeAccount:hover{
+    text-decoration: underline;
+}
+
+.about{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 15px 10px 0;
+    text-decoration: none;
+    color: rgb(154, 0, 154);
+}
+.schedule{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 10px 15px;
+    text-decoration: none;
+    color: rgb(154, 0, 154);
+}
+
+.aboutBox{
+    position: relative;
+    width: 60%;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:white ;
+    text-align: center;
+    padding-top: 10px;
+}
+.aboutBox h1{
+    font-weight: 100;
+}
+
+.scheduleBox{
+    position: relative;
+    width: 60%;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:white ;
+    text-align: center;
+    padding-top: 10px;
+}
+.scheduleBox h1{
+    font-weight: 100;
+}
+.aboutSch{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 10px 15px;
+    text-decoration: none;
+    color: rgb(154, 0, 154);
+}
+.logOut{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 15px 10px 0;
+    text-decoration: none;
+    color: rgb(154, 0, 154);
+}
+
+table{
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    display: flex ;
+    padding: 0;
+    border-collapse: collapse;
+}
+th, tr,td{
+    border: solid black 2px;
+    margin: 0;
+    padding: 5px;
+}
