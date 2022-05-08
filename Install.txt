@@ -1,0 +1,79 @@
+This is the install file for the LAMP Web Application project. This file is meant to be a guide to help install the project. You can use the website file provided or you can provide 
+your own with modifications I will go over in the document. This project is of moderate difficulty and may be too complex for first time Linux users. 
+
+~STEP 0 - WHAT WILL YOU NEED?~
+Aside from the files provided in the git directory, you may need to download, acquire or install a few things.
+- A Linux system or virtual machine running Debian 11.
+- Access to funds for the VPS and Domain registration service.
+- GitHub (For easier in version control and software hosting)
+
+Installing Linux on a system may be complicated for first time users. Below is a quick video that can be used to assist in installing: 
+https://www.youtube.com/watch?v=poCSq_0OmjE
+
+~STEP 1-VPS AND DOMAIN REGISTRATION~
+The first step in setting up will be to acquire a VPS and a domain name.
+
+- VPS
+For this project we used OVHcloud (https://www.ovhcloud.com/en/). They had fairly cheap rates for a VPS. We went for a fairly cheap one but if you want to get a VPS with beefier 
+specs, it's up to you. For the purpose of the project, the minumum spec VPS did the trick. After finding a plan that fits your needs, you can purchase it. It may take some time to 
+process. Once the transation has been processed, you will be provided with three important pieces of info:
+- An IPv4 Address
+- A Username
+- A Password
+
+- DOMAIN
+We also used OVHcloud to register our domain for the sake of convenience. Simply search for a domain on the site of a service that offers domain registration until you find one that
+is to your liking and available. You will also be given the option of a top-level domain We chose bestschedule.ca as our domain. Depending on your options, you may need to go through
+some additional steps. As users of a .ca domain, we had to sign a registrant agreement with the CIRA (Canadian Internet Registration Authority) before our domain could be processed.
+
+-POINTING DOMAIN TO VPS
+Now that both are registered, log into your domain service's website and look for a your DNS settings. From there two DNS records of type A.
+- Hostname: @		Points to: *IPv4 address provided by VPS service*
+- Hostname: www	Points to: *IPv4 address provided by VPS service*
+
+It will take some time before your DNS is propogated. In the meantime, you can use this website to track its propogation: https://dnschecker.org/
+
+~STEP 2 - BASIC SERVER SETUP~
+
+- SSH
+Now that your VPS and domain are set up, open your linux machine if you aren't currently using it. Open the terminal. Use the $ sudo apt update and  $ sudo apt upgrade to make sure
+all of your services are up to date. Next, you will have to use ssh to get into your VPS. If it isn't installed, you can install it using the $ sudo apt install openssh-server
+command. To get into your vps, use the command as follows: ssh *username provided by VPS service*@*IPv4 provided by VPS service*, then log in using the provided password.
+
+- INSTALLING AND CONFIGURING APACHE2
+The next step in setting up the server will be to install APACHE2. To install, use the command $ sudo apt update, and $ sudo apt install apache2. Next, you will want to navigate to
+Apache2's files which should be located in the following directory: /etc/apache2/sites-available (use command $ cd). Use an editor like vim or nano to add the following lines to the
+file called 000-default.conf. Between DocumentRoot and ErrorLog add the following lines:
+- ServerName *Your website name*.*top level domain*
+- ServerAlias www.*Your website name*.*top level domain*
+
+You may need to change the permissions of the file to allow saving (use the $ chmod command).
+
+Save the document. Start Apache2 using the command sudo systemctl start apache2. After the updates are processed and the DNS propogated, entering the domain in an internet browser
+should yield the Apache2 default page, meaning your server is up.
+
+~STEP 3 - SECURITY SETUP~
+You will need to install some security next.
+
+- FAIL2BAN
+To install fail2ban, use the command $ sudo apt install fail2ban. Using it is as simple as using the commands $ systemctl start fail2ban, and $ systemctl enable fail2ban.
+
+- MOD_EVASIVE
+To install mod_evasive, use the command $ sudo apt install libapache2-mod-evasive. To configure it, go to the directory /etc/apache2/mods-enabled/evasive.conf and edit the file
+by repacing *you@yourdomain.com* with your actual email. You must also remove the comment tags (#) from the follwing entries:
+- DOSHashTableSize 3097
+- DOSPageCount 2
+- DOSSiteCount 50
+- DOSPageInterval 1
+- DOSSiteInterval 1
+- DOSBlockingPeriod 10
+- DOSEmailNotify mail@yourdomain.com
+- DOSLogDir "/var/log/apache2/"
+
+Save and reload Apache2 (sudo systemctl restart apache2).
+
+- FIREWALL
+We used iptables as our firewall. Use the command $ sudo apt-get install iptables-persistent. Then use the command $ sudo systemctl enable iptables, to activate it.
+
+~STEP 3 - DATABASE SETUP~
+
