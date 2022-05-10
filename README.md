@@ -39,7 +39,7 @@ The biggest choice was between Debian and Ubuntu as a distribution for the proje
     <td>Less server support</td>
   </tr>
   <tr>
-    <td>Better hardware support/td>
+    <td>Better hardware support</td>
     <td>Less stable</td>
   </tr>
   <tr>
