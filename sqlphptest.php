@@ -30,14 +30,14 @@
 				
 				while ($row = mysqli_fetch_array($query)) {
 					echo
-  						"<tr>
+  						`<tr>
     							<td>{$row['id']}</td>
     							<td>{$row['fname']}</td>
     							<td>{$row['lname']}</td>
     							<td>{$row['program']}</td>
     							<td>{$row['city']}</td>
     							<td>{$row['yob']}</td>
-   						</tr>/n";
+   						</tr>/n`;
 				}
 
 			?>
