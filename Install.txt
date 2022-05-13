@@ -1,5 +1,5 @@
-This is the install file for the LAMP Web Application project. This file is meant to be a guide to help install the project. You can use the website file provided or you can provide 
-your own with modifications I will go over in the document. This project is of moderate difficulty and may be too complex for first time Linux users. 
+This is the install file for the vps project with git actions deployment. This file is meant to be a guide to help install the project. You can use the website file provided or you can provide 
+your own. This project is of moderate difficulty and may be too complex for first time Linux users. 
 
 ~STEP 0 - WHAT WILL YOU NEED?~
 Aside from the files provided in the git directory, you may need to download, acquire or install a few things.
@@ -29,7 +29,7 @@ some additional steps. As users of a .ca domain, we had to sign a registrant agr
 -POINTING DOMAIN TO VPS
 Now that both are registered, log into your domain service's website and look for a your DNS settings. From there two DNS records of type A.
 - Hostname: @		Points to: *IPv4 address provided by VPS service*
-- Hostname: www	Points to: *IPv4 address provided by VPS service*
+- Hostname: www	        Points to: *IPv4 address provided by VPS service*
 
 It will take some time before your DNS is propogated. In the meantime, you can use this website to track its propogation: https://dnschecker.org/
 
@@ -75,5 +75,26 @@ Save and reload Apache2 (sudo systemctl restart apache2).
 - FIREWALL
 We used iptables as our firewall. Use the command $ sudo apt-get install iptables-persistent. Then use the command $ sudo systemctl enable iptables, to activate it.
 
-~STEP 3 - DATABASE SETUP~
+~STEP 4 - SETTING UP GITHUB ACTIONS AND THE SCRIPT~
+Set up a github repository and add this project's files into it. Push it.
+
+- GENERATING AN SSH KEY
+To set up the script, you will have to generate an ssh key. To do that, you enter $ ssh-keygen -b 4096 -t rsa in the terminal. Continue to press enter for default options. Coppy the
+contents of the resulting key and move to the next step.
+
+- GITHUB SECRETS
+Go into your repository's settings. Under 'Secrets', select actions and click 'New repository secret'.
+Add the following information:
+Name: HOST	Value: *IPv4 address provided by VPS service*
+Name: PORT	Value: *The port of your server (Default 22)*
+Name: SSHKEY    Value: *Contents of the ssh key you copied*
+Name: USERNAME	Value: *The server username (Default the username given by VPS service)*
+
+- SELF HOSTED RUNNER
+In the project settings, go to 'Actions', 'Runners', and click 'New self-hosted runner'. Choose Linux as the image and x64 as the architecture. You should now follow the instructions
+given to you. Once you enter $ ./run.sh, the contents of the repository will be deployed to your server's website folder.
+
+
+
+
 
