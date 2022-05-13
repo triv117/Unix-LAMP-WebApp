@@ -92,7 +92,8 @@ Name: USERNAME	Value: *The server username (Default the username given by VPS se
 
 - SELF HOSTED RUNNER
 In the project settings, go to 'Actions', 'Runners', and click 'New self-hosted runner'. Choose Linux as the image and x64 as the architecture. You should now follow the instructions
-given to you. Once you enter $ ./run.sh, the contents of the repository will be deployed to your server's website folder.
+given to you. Once you enter $ ./run.sh, the contents of the repository will be deployed to your server's website folder. The final step is to install the runner as a service by using\
+the command (while in the runner's directory) $ sudo ./svc.sh install, and then activate it with $ sudo ./svc.sh start.
 
 
 

@@ -1,10 +1,10 @@
-<h1>Unix-LAMP-WebApp</h1>
+<h1>Unix: VPS with GitHub Actions</h1>
 
-<img src="https://phoenixweb.com.au/wp-content/uploads/2016/11/LAMP-Stack-logo.png" width="50%" height="50%">
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faperogeek.fr%2Fwp-content%2Fuploads%2F2020%2F01%2Fgithub-1024x925.png&f=1&nofb=1" width="25%" height="25%">
 
-This project intends to use the LAMP stack model to host a web application. LAMP is a software stack that implements Linux, a web server, a database and a script language. The project will be using Debian as the Linux distribution, an Apache web server, MySQL databases, and PHP scripting language.
+This project intends to use GitHub Actions in order to automatically redploy pushed repository changess. The project will be using Debian as the Linux distribution, and will implement GitHub Actions, GitHub Secrets, and with use a self-hosted runner service. 
 
-The website is intended to be a work/time management application by the likes of Trello. Our project will be using a VPS as a platform.
+The files are intended to be used as a template from which you can host manage your own website using redeploy. 
 
 <h2>Considerations:</h2>
 
@@ -48,20 +48,34 @@ The biggest choice was between Debian and Ubuntu as a distribution for the proje
   </tr>
 </table>
 
-We ultimately chose Debian as our distribution because of its lightweight nature and stability. It is also the distribution our team is the most familiar with.
 
-<h2>Requirements:</h2>
-<ul>
-<li>User Accounts: The website will use PHP and MySQL to manage and create user accounts.</li>
-<li>Process/Service Management: Management will be done uniquely on the host’s side.</li>
-<li>Security: Setting up a firewall as well as Fail2ban, Mod_security and Mod_evasive.</li>
-<li>Automated Tasks: Mainly involve managing HTTP requests and web scraping. PHP scripting will be used for its ease of use with MySQL.</li>
-</ul>
-<h2>Timeline:</h2>
-<ul>
-<li>Week 1: Setting up Linux, Apache, MySQL and PHP, running tests on server, VPS purchase, setting up Git.</li>
-<li>Week 2: Basic server setup, setting up security services, writing PHP scripts and the HTML/CSS for the web application.</li>
-<li>Week 3: Writing the scripts for automated processes and the account system.</li>
-</ul>
-<h2>Team composition:</h2>
-<a href="https://github.com/triv117" target="_blank">Tommy Rivard</a> & <a href="https://github.com/damianovisa" target="_blank">Damiano Visalli
+We ultimately chose Debian as our distribution because of its lightweight nature and stability. It is also the distribution our team is the most familiar with.
+<h2>Details:</h2>
+The project should be relatively easy for experienced linux users or people who are familiar with servers. All of the files needed for the project are included in the repository. There are website files inculded in the repository as a sample, but feel free to use your own website files.
+
+<h2>About / Team composition:</h2>
+<a href="https://github.com/triv117" target="_blank">Tommy Rivard</a> & <a href="https://github.com/damianovisa" target="_blank">Damiano Visalli</a>
+
+This project was completed as part of a Unix course. While the original idea of this project was greater, (originally implementing a LAMP stack), we are still very satisfied with the experience and have learned a lot making it.
+  
+ Thank you to everyone involved in the project and thank you to our teacher Tassia Camoes-Araujo.
+
+  <tr>
+    <td>Large community</td>
+    <td></td>
+  </tr>
+</table>
+
+
+We ultimately chose Debian as our distribution because of its lightweight nature and stability. It is also the distribution our team is the most familiar with.
+<h2>Details:</h2>
+The project should be relatively easy for experienced linux users or people who are familiar with servers. All of the files needed for the project are included in the repository. 
+
+There are website files inculded in the repository as a sample, but feel free to use your own website files.
+
+<h2>About / Team composition:</h2>
+<a href="https://github.com/triv117" target="_blank">Tommy Rivard</a> & <a href="https://github.com/damianovisa" target="_blank">Damiano Visalli</a>
+
+This project was completed as part of a Unix course. While the original idea of this project was greater, (originally implementing a LAMP stack), we are still very satisfied with the experience and have learned a lot making it.
+  
+ Thank you to everyone involved in the project and thank you to our teacher Tassia Camoes-Araujo.
