@@ -59,23 +59,3 @@ The project should be relatively easy for experienced linux users or people who 
 This project was completed as part of a Unix course. While the original idea of this project was greater, (originally implementing a LAMP stack), we are still very satisfied with the experience and have learned a lot making it.
   
  Thank you to everyone involved in the project and thank you to our teacher Tassia Camoes-Araujo.
-
-  <tr>
-    <td>Large community</td>
-    <td></td>
-  </tr>
-</table>
-
-
-We ultimately chose Debian as our distribution because of its lightweight nature and stability. It is also the distribution our team is the most familiar with.
-<h2>Details:</h2>
-The project should be relatively easy for experienced linux users or people who are familiar with servers. All of the files needed for the project are included in the repository. 
-
-There are website files inculded in the repository as a sample, but feel free to use your own website files.
-
-<h2>About / Team composition:</h2>
-<a href="https://github.com/triv117" target="_blank">Tommy Rivard</a> & <a href="https://github.com/damianovisa" target="_blank">Damiano Visalli</a>
-
-This project was completed as part of a Unix course. While the original idea of this project was greater, (originally implementing a LAMP stack), we are still very satisfied with the experience and have learned a lot making it.
-  
- Thank you to everyone involved in the project and thank you to our teacher Tassia Camoes-Araujo.
